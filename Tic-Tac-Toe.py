@@ -3,10 +3,14 @@ board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
 
+
 def print_board():
     print(board[0] + " | " + board[1] + " | " + board[2])
+    print("---------")
     print(board[3] + " | " + board[4] + " | " + board[5])
+    print("---------")
     print(board[6] + " | " + board[7] + " | " + board[8])
+
 
 def take_turn(player):
     print(player + "'s turn.")
@@ -19,8 +23,9 @@ def take_turn(player):
     board[position] = player
     print_board()
 
+
 def check_game_over():
-   
+    # Check for a win
     if (board[0] == board[1] == board[2] != "-") or \
        (board[3] == board[4] == board[5] != "-") or \
        (board[6] == board[7] == board[8] != "-") or \
@@ -37,6 +42,7 @@ def check_game_over():
     else:
         return "play"
 
+
 def play_game():
     print_board()
     current_player = "X"
@@ -51,12 +57,8 @@ def play_game():
             print("It's a tie!")
             game_over = True
         else:
-            # Switch to the other player
-            
-            if current_player == "X" :
-              current_player = "O" 
-            else:
-                 "X"
+           
+            current_player = "O" if current_player == "X" else "X"
 
-# Start the game
+
 play_game()
